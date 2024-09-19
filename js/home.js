@@ -3,9 +3,17 @@ document
   .addEventListener("click", function (event) {
     event.preventDefault();
 
-    const addMoney = Number(document.getElementById("input-add-money").value);
-    console.log(addMoney);
+    const addMoneyInput = document.getElementById("input-add-money").value;
+    const pinNumberInput = document.getElementById("input-pin-number").value;
 
-    const pinNumber = document.getElementById("input-pin-number").value;
-    console.log(pinNumber);
+    if (pinNumberInput === "1234") {
+      const balance = document.getElementById("account-balance").innerText;
+      const addMoneyNumber = parseFloat(addMoneyInput);
+      const balanceNumber = parseFloat(balance);
+      const newBalance = addMoneyNumber + balanceNumber;
+
+      document.getElementById("account-balance").innerText = newBalance;
+    } else {
+      alert("Failed to add money! Please try again.");
+    }
   });
