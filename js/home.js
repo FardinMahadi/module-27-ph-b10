@@ -1,3 +1,4 @@
+// add money
 document
   .getElementById("btn-add-money")
   .addEventListener("click", function (event) {
@@ -16,8 +17,7 @@ document
     }
   });
 
-//   cash out
-
+// cash out
 document
   .getElementById("btn-cash-out")
   .addEventListener("click", function (event) {
@@ -36,4 +36,22 @@ document
     } else {
       alert("Failed to cash out. Please try again later.");
     }
+  });
+
+//   show the add money form
+document
+  .getElementById("btn-show-add-money")
+  .addEventListener("click", function () {
+    document.getElementById("cash-out-form").classList.add("hidden");
+
+    document.getElementById("add-money-form").classList.remove("hidden");
+  });
+
+//   show the cash out form
+document
+  .getElementById("btn-show-cash-out")
+  .addEventListener("click", function () {
+    document.getElementById("cash-out-form").classList.remove("hidden");
+
+    document.getElementById("add-money-form").classList.add("hidden");
   });
